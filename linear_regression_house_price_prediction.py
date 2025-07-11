@@ -37,4 +37,29 @@ num_bedrooms = np.array([1, 2, 2, 3, 3, 3, 4, 4, 4, 5])                   #compl
 prices = np.array([300000, 410000, 530000, 510000, 540000, 610000, 730000, 760000, 830000, 860000])         #complete this
 
 
+import matplotlib.pyplot as plt           #complete this
+from mpl_toolkits.mplot3d import Axes3D     #complete this
+
+# Create a 3D scatter plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')                       #complete this
+
+# Scatter plot points with house_sizes and num_bedrooms as X and Y, and prices as Z
+ax.scatter(house_sizes, num_bedrooms, prices, c='blue', marker='o')           #complete this
+
+# Labels for axes
+ax.set_xlabel('House Size') #complete this
+ax.set_ylabel('Number of Bedrooms') #complete this
+ax.set_zlabel('Price') #complete this
+
+# Add dotted lines from data points to respective values on X and Y axes
+for i in range(len(house_sizes)):
+    ax.plot([house_sizes[i], house_sizes[i]], [num_bedrooms[i], num_bedrooms[i]], [0, prices[i]], c='gray', linestyle='dotted', alpha=0.5)
+    ax.plot([house_sizes[i], house_sizes[i]], [0, num_bedrooms[i]], [prices[i], prices[i]], c='gray', linestyle='dotted', alpha=0.5)
+    ax.plot([0, house_sizes[i]], [num_bedrooms[i], num_bedrooms[i]], [prices[i], prices[i]], c='gray', linestyle='dotted', alpha=0.5)
+
+plt.title('House Prices vs. House Sizes and Number of Bedrooms')
+plt.show()
+
+
 

@@ -24,3 +24,17 @@ input_array = np.array([user_input]).reshape(-1, 1)
 if st.button('Predict Price'):
     predicted_price = model.predict(input_array)
     st.write(f"The predicted house price is: ${predicted_price[0]:.2f}")
+
+
+import numpy as np                                         #complete this
+from sklearn.model_selection import train_test_split             #complete this
+from sklearn.linear_model import LinearRegression               #complete this
+from sklearn.metrics import mean_squared_error                     #complete this
+
+# Sample dataset: house sizes and number of bedrooms as features, and prices as the target variable
+house_sizes = np.array([550, 600, 650, 700, 750, 800, 850, 900, 950, 1000])
+num_bedrooms = np.array([1, 2, 2, 3, 3, 3, 4, 4, 4, 5])                   #complete this
+prices = np.array([300000, 410000, 530000, 510000, 540000, 610000, 730000, 760000, 830000, 860000])         #complete this
+
+
+
